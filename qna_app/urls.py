@@ -15,9 +15,10 @@ Including another URLconf
 """
 
 from django.urls import path,include
+from .views import addques
 # from .views import qna_app,user_app
 
 urlpatterns = [
-   
+   path('addques/',addques,name='addques')
     
 ]

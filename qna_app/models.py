@@ -10,6 +10,8 @@ class QuestionModel(models.Model):
     qn_votes = models.IntegerField(default=0)
     qn_image = models.ImageField(upload_to='QuestionImage',blank=True,null=True)
 
+    # objects=objects.models.Manager()------- greybox in object
+
     def __str__(self):
         return (self.qn_desc) 
 

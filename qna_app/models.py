@@ -7,7 +7,11 @@ class QuestionModel(models.Model):
     posted_by = models.CharField(max_length=50)
     timestamp = models.DateTimeField(auto_now_add=True)
     qn_desc = models.TextField(max_length=255)
-    qn_image = models.ImageField(upload_to='QuestionImage')
+    qn_votes = models.IntegerField(default=0)
+    qn_image = models.ImageField(upload_to='QuestionImage',blank=True,null=True)
+
+    def __str__(self):
+        return (self.qn_desc) 
 
 
 class AnswerModel(models.Model):
@@ -16,7 +20,7 @@ class AnswerModel(models.Model):
     ans_desc = models.TextField(max_length=255)
     ans_image = models.ImageField(upload_to='AnswerImage')
     is_accept = models.BooleanField()
-    votes = models.IntegerField()
+    ans_votes = models.IntegerField(default=0)
     question = models.ForeignKey(QuestionModel,on_delete=models.CASCADE)
 
 

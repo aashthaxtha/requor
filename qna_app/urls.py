@@ -15,9 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path,include
-from .views import qna_app,user_app
+# from .views import qna_app,user_app
 
 urlpatterns = [
    
-    path('add')
+    
 ]

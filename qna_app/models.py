@@ -7,7 +7,7 @@ class CategoryModel(models.Model):
     cdesc = models.TextField(max_length=255)
 
     def __str__(self):
-        return (self.cdesc) 
+        return (self.ctitle) 
     
 
 class QuestionModel(models.Model):

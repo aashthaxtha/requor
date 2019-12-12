@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.urls import path,include
-from .views import addques,question,update_question,delete
+from .views import addques,question,update_question,delete,QuestionModelCreateView,QuestionModelListView
 # from .views import qna_app,user_app
 
 app_name = 'qna'
@@ -25,7 +25,9 @@ urlpatterns = [
     path('read/',question,name='read'),
     path('update/<int:id>/',update_question,name='update_question'),
     path('create/',addques,name='addques'),
-    path('delete/<int:id>/',delete,name='delete')
+    path('delete/<int:id>/',delete,name='delete'),
+    path('create/',QuestionModelCreateView.as_view()),
+    path('list/',QuestionModelListView.as_view())
    
 
 # url(r'^category/(?P<hierarchy>.+)/$', views.show_category, name='category'),

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    Title page
+    {% endblock %}
+
+
+    {%block main_body%}
+           
+            <div class="card">
+                <div class="main_card">
+                    <h4>{{question.title}}</h4>
+                    <h5>{{question.qn_desc}}</h5>
+                    
+
+                </div>
+            </div><br>
+            <h3><b>Answers:</b></h3>
+            {%for answer in answer%}
+                <div class="card">
+                    <div class="main_card">
+                            <h2>{{answer.ans_desc}}</h2>
+                            <h6>{{answer.timestamp}}</h6>
+                            <h6>{{answer.answered_by}}</h6>
+                            
+                            
+        
+                    </div>
+                </div>
+            
+            {%endfor%}    
+    {%endblock%}

@@ -8,3 +8,8 @@ class QuestionForm(forms.ModelForm):
         model = QuestionModel
         # category = CategoryModel
         fields = '__all__'
+
+class AnswerContent(forms.ModelForm):
+    class Meta:
+        model=AnswerModel
+        fields='__all__'

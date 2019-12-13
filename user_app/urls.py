@@ -1,10 +1,11 @@
 
 
-from django.urls import path,include
-# from .views impor qna_app,user_app
+from django.urls import path
+from .views import loginauth,logout
+
+app_name='user'
 
 urlpatterns = [
-    
-#     path('qna/',qna_app),
-#     path('user/',user_app)
+      path('login/',loginauth,name='login'),
+      path('logout/',logout,name='logout')
  ]
